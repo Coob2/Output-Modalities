@@ -1,15 +1,35 @@
 $(document).on("pagecreate","#pageone",function(){
-  $('#submitButton').on("click", function(){
-    submitText();
-  });            
-});            
 
+  $('#btnBeep').on("click", function(){
+    Beep();
+  });
 
-function submitText() {
-	var text = $('#textinput').val();
-	alert(text);
+  $('#btnVibrate').on("click", function(){
+    Vibrate();
+  });
+
+});
+
+function Beep()
+{
+  navigator.notification.beep(1);
+  alert("Hello!");
 }
 
-function storeValue(key, value) {
-	//add some code to store the key-value pair in persistant storage 
+function Vibrate()
+{
+  navigator.vibrate(1000);
+  alert("Hello");
 }
+
+function random() {
+	return !Math.round(Math.random());
+}
+
+function Nothing()
+{
+  alert("Hi");
+}
+
+//var text = $('#textinput').val();
+//alert(text);
